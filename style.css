@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --blue: #0a0c19;
+    --dark-violet: #1b1938;
+    --violet: #aa5cdb;
+    --white:#fff;
+    --off-white: #dcdcdc;
+    --primary-font : "Inter", sans-serif;
+    --secendary-font : "Lexend Deca", sans-serif;
+
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+}
+.card{
+    height: 60vh;
+    width: 70%;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.card:hover .overlay{
+    opacity: 0;
+}
+
+.card:hover .card_image >img{
+filter: grayscale(0%);
+}
+.card_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    height: 100%;
+    width: 50%;
+    background-color: var(--dark-violet);
+    color: var(--white);
+    font-family: var(--primary-font)
+    
+}
+.card_title > h1{
+    margin-bottom: 25px;
+}
+.card_title > h1 > span {
+    color: var(--violet);
+}
+.card_image {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    
+}
+.card_image > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+    
+}
+.card_stat{
+    display: flex;
+    gap: 25px;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: var(--violet);
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.3;
+    z-index: 500;
+    transition: all ease-in 300ms;
+}
+
+/* screen size */
+@media only screen and (max-width: 1100px) {
+    .card_text {
+    width: 75%;
+    }
+    .card_image {
+        width: 25%;
+        }
+}
+
+@media only screen and (max-width: 800px){
+    .card{
+        height: 90vh;
+        flex-direction: column-reverse;
+
+    }
+    .card_image {
+        width: 100%;
+        }
+        .card_text {
+            width: 100%;
+        }
+}
+
+@media only screen and (max-width: 500px)
+{
+.card_text{
+    height: 70%;
+    padding: 25px;
+}
+.card_title > h1 {
+    font-size: 1.5rem;
+}
+.card_image{
+    height: 30%;
+}
+}
+
